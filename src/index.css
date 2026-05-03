@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #020617; /* slate-950 */
+  --color-brand-steel: #1e293b; /* slate-800 */
+  --color-brand-gold: #f59e0b; /* amber-500 */
+  --color-brand-gray: #0f172a; /* slate-900 */
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-navy text-slate-100 font-sans;
+  }
+}
+
+@layer utilities {
+  .geometric-border {
+    @apply border border-slate-800;
+  }
+  .glass-card {
+    @apply bg-slate-900/50 backdrop-blur-md border border-slate-800 shadow-2xl;
+  }
+  .amber-outline {
+    @apply border border-brand-gold/50 text-brand-gold hover:bg-brand-gold hover:text-brand-navy;
+  }
+}
+
