@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../lib/utils';
+import logoUrl from '../assets/logo.png';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -42,9 +43,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-brand-gold rounded-sm flex items-center justify-center rotate-45 group-hover:rotate-90 transition-transform">
-              <span className="text-brand-navy font-black text-xl -rotate-45 group-hover:-rotate-90 transition-transform">V</span>
-            </div>
+            <img
+              src={logoUrl}
+              alt="VAVADIA"
+              className="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-110"
+            />
             <span className="text-2xl font-bold tracking-tighter uppercase text-white">
               VAVADIA
             </span>

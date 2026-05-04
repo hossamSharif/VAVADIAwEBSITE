@@ -6,48 +6,46 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { cn } from '../lib/utils';
+import HeroBackground from '../components/HeroBackground';
 
 export default function Home() {
   return (
     <div className="flex-1 grid grid-cols-1 md:grid-cols-12 gap-0 min-h-[calc(100vh-8rem)]">
       {/* Column 1: Brand & Hero (5/12) */}
-      <div className="md:col-span-12 lg:col-span-5 border-r border-slate-800 p-8 md:p-16 flex flex-col justify-center bg-gradient-to-br from-slate-950 to-slate-900 overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-10 right-10 w-64 h-64 border border-brand-gold rotate-45"></div>
-          <div className="absolute bottom-10 left-10 w-32 h-32 border border-slate-700 -rotate-12"></div>
-        </div>
-        
-        <motion.div 
+      <div className="md:col-span-12 lg:col-span-5 border-r border-slate-800 p-8 md:p-16 flex flex-col justify-center bg-gradient-to-br from-brand-navy to-slate-900 overflow-hidden relative">
+        <HeroBackground />
+
+        <motion.div
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
           className="relative z-10"
         >
           <div className="mb-8 flex gap-3">
-            <span className="h-[2px] w-12 bg-brand-gold self-center"></span>
-            <span className="text-brand-gold text-[10px] font-black uppercase tracking-[0.3em]">B2B Trade Consultancy</span>
+            <span className="h-[2px] w-12 bg-brand-yellow self-center"></span>
+            <span className="text-brand-yellow text-[10px] font-black uppercase tracking-[0.3em]">B2B Trade Consultancy</span>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-black leading-[0.9] tracking-tighter mb-8 text-white">
             Source <span className="text-slate-500">Smarter.</span><br/>
             Trade <span className="text-slate-500">Globally.</span><br/>
-            Grow <span className="text-brand-gold">Faster.</span>
+            Grow <span className="text-brand-yellow">Faster.</span>
           </h1>
-          
-          <p className="text-slate-400 text-lg leading-relaxed mb-10 max-w-sm font-light">
+
+          <p className="text-slate-300 text-lg leading-relaxed mb-10 max-w-sm font-light">
             We help businesses find the right products, at the right price, with full sourcing and trade support.
           </p>
-          
+
           <div className="flex flex-wrap gap-4">
-            <Link 
-              to="/inquiry" 
-              className="px-10 py-5 bg-brand-gold text-brand-navy font-black uppercase text-[10px] tracking-widest hover:scale-105 transition-transform"
+            <Link
+              to="/inquiry"
+              className="px-10 py-5 bg-brand-yellow text-brand-navy font-black uppercase text-[10px] tracking-widest hover:scale-105 transition-transform shadow-lg shadow-brand-yellow/20"
             >
               Start Inquiry
             </Link>
-            <button 
+            <button
               onClick={() => document.getElementById('strategic-caps')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-10 py-5 bg-slate-800 text-white font-black uppercase text-[10px] tracking-widest hover:bg-slate-700 transition-colors"
+              className="px-10 py-5 bg-brand-blue/90 text-white font-black uppercase text-[10px] tracking-widest hover:bg-brand-blue transition-colors"
             >
               How It Works
             </button>
